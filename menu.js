@@ -31,6 +31,16 @@
 */
 
 //CODE HERE
+const pizza = {
+    name: 'The best Thing ever!',
+    price: 7.99,
+    category: 'entree',
+    popularity: 10,
+    rating: 10,
+    tags: ['Family Size', 'Meat', 'Cheese']
+}
+
+// console.log(pizza)
 
 
 
@@ -43,7 +53,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +63,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags)
 
 /*
     Third, destructure the price off of the
@@ -63,7 +73,9 @@
 */
 
 //CODE HERE
+const {price} = pizza
 
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +85,9 @@
 */
 
 //CODE HERE
+const {category} = pizza
 
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -89,7 +103,48 @@
 
 //CODE HERE
 
-
+const foodArr = [
+    {
+        name: 'Sausage',
+        price: 4.99,
+        category: 'Appetizer',
+        popularity: 7,
+        rating: 8,
+        tags: ['Italian Sausage', 'Men']
+    },
+    {
+      name: 'Pinapple',
+      price: 7.99,
+      category: 'Appetizer',
+      popularity: 9,
+      rating: 10,
+      tags: ['Grilled', 'Sweet', 'Gluten-Free']
+    },
+    {
+        name: 'Chicken Nuggets',
+        price: 3.50,
+        category: 'Entree',
+        popularity: 10,
+        rating: 8,
+        tags: ['Kids', 'Chicken']
+    },
+    {
+        name: 'Vegetable Soup',
+        price: 2.99,
+        category: 'Entree',
+        popularity: 5,
+        rating: 7,
+        tags: ['Vegan', 'Soup', 'Vegetables']
+    },
+    {
+         name: 'Mushroom',
+         price: 1,
+         category: 'Appetizer',
+         popularity: 1,
+         rating: 1,
+         tags: ['Strange', 'Gross']
+    }
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -105,9 +160,9 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+// const filteredFood = foodArr.filter() 
 
-
+// console.log(filteredFood)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -149,8 +204,25 @@
 */
 
 //CODE HERE
+const filterByProperty = (property, number, type) => {
+    const filteredArray = foodArr.filter((food, index, array) => {
+      if (type === 'above') {
+        if (food[property] > number) {
+          return food
+        }
+      } else {
+        if (food[property] < number) {
+          return food
+        }
+      }
+    })
+  
+    return filteredArray
+  }
 
-
+console.log(filterByProperty('price', 6, 'below'))
+console.log(filterByProperty('popularity', 3, 'above'))
+console.log(filterByProperty('rating', 4, 'above'))
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
