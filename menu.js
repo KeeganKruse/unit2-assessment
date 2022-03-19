@@ -122,7 +122,7 @@ const foodArr = [
     },
     {
         name: 'Chicken Nuggets',
-        price: 3.50,
+        price: 3.99,
         category: 'Entree',
         popularity: 10,
         rating: 8,
@@ -159,10 +159,16 @@ const foodArr = [
 */
 
 //CODE HERE
+const getFoodByKidsTag = (foodObj, i, array) => {
 
-// const filteredFood = foodArr.filter() 
+    const isTagIncluded = foodObj.tags.includes('Kids')
 
-// console.log(filteredFood)
+    return isTagIncluded
+}
+
+const filteredFood = foodArr.filter(getFoodByKidsTag)
+
+console.log(filteredFood)
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -220,9 +226,6 @@ const filterByProperty = (property, number, type) => {
     return filteredArray
   }
 
-console.log(filterByProperty('price', 6, 'below'))
-console.log(filterByProperty('popularity', 3, 'above'))
-console.log(filterByProperty('rating', 4, 'above'))
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
@@ -231,3 +234,4 @@ console.log(filterByProperty('rating', 4, 'above'))
 */
 
 //CODE HERE
+console.log(filterByProperty('price', 6, 'below'))
