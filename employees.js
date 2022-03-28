@@ -20,7 +20,12 @@
 */
 
 //CODE HERE
-
+class employee {
+    constructor (name, shifts){
+        this.name = name
+        this.shifts = shifts
+    }
+}
 
 
 /*
